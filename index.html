@@ -1,708 +1,628 @@
- 
+Here is the complete HTML, CSS, and JavaScript code for your website.
+To use this on your GitHub repository (Oronjo-green-energy-solution), create or edit the file named index.html in your repository and paste the code below:
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oronjo Green Energy Solution | Professional Solar & Power Solutions</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b',
-                        },
-                        amber: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        },
-                        slate: {
-                            850: '#151f32',
-                            900: '#0f172a',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oronjo Green Energy Solution | Professional Solar & Power Solutions</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Top Bar -->
-    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-4">
-                <span><i class="fas fa-phone-alt text-amber-400 mr-2"></i> +254 713 604 062</span>
-                <span class="hidden md:inline"><i class="fas fa-envelope text-amber-400 mr-2"></i> info@oronjogreenenergy.com</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <span class="text-emerald-400 font-medium"><i class="fas fa-leaf mr-1"></i> Clean, Reliable & Sustainable</span>
-            </div>
+  <style>
+    :root {
+      --bg-white: #ffffff;
+      --bg-soft: #f8faf9;
+      --text-dark: #121c17;
+      --text-muted: #55635c;
+      --brand-green: #1b4d2e;
+      --brand-green-hover: #133a22;
+      --brand-yellow: #e5a100;
+      --border-light: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Top Payment & Info Banner */
+    .top-banner {
+      background-color: var(--bg-soft);
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-green);
+      text-align: center;
+    }
+
+    .top-banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      background: #ffffff;
+      border: 1px solid rgba(229, 161, 0, 0.4);
+      padding: 2px 10px;
+      border-radius: 20px;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--brand-yellow);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-green);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-green-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-soft);
+      color: var(--brand-green);
+      border: 1px solid var(--border-light);
+    }
+
+    .btn-secondary:hover {
+      background-color: #edf2f0;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 64px 16px;
+      background: var(--bg-white);
+      text-align: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: var(--bg-soft);
+      border: 1px solid var(--border-light);
+      border-radius: 50px;
+      color: var(--brand-green);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 64px 16px;
+      background-color: var(--bg-soft);
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px auto;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .services-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand-green);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .service-features {
+      list-style: none;
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+
+    .service-features li {
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-features li::before {
+      content: "—";
+      color: var(--brand-yellow);
+      font-weight: 800;
+    }
+
+    /* Official Details Card */
+    .official-info {
+      padding: 64px 16px;
+      background: var(--bg-white);
+    }
+
+    .info-box {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 2px solid var(--brand-green);
+      border-radius: 16px;
+      padding: 40px 24px;
+      text-align: center;
+      background: #fafcfb;
+    }
+
+    .info-box h3 {
+      font-size: 1.5rem;
+      color: var(--brand-green);
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .payment-details-flex {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .payment-item {
+      background: #ffffff;
+      padding: 16px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      min-width: 200px;
+    }
+
+    .payment-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .payment-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-top: 4px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 64px 16px;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 32px 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--brand-green);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      padding: 32px 16px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-banner">
+    <div class="top-banner-inner">
+      <span>Direct Phone: <strong>0713604062</strong></span>
+      <span>•</span>
+      <span>M-Pesa Paybill: <span class="badge-pill">303030</span></span>
+      <span>Account: <span class="badge-pill">RSKC#</span></span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <!-- Recreated Official SVG Logo -->
+        <svg class="logo-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 9 Solar Sun Rays -->
+          <path d="M250 35L268 95L250 110L232 95Z" fill="#E5A100"/>
+          <path d="M190 55L218 105L198 122L175 100Z" fill="#E5A100"/>
+          <path d="M310 55L325 100L302 122L282 105Z" fill="#E5A100"/>
+          <path d="M140 90L178 128L155 145L125 125Z" fill="#E5A100"/>
+          <path d="M360 90L375 125L345 145L322 128Z" fill="#E5A100"/>
+          <path d="M100 140L145 162L125 182L90 170Z" fill="#E5A100"/>
+          <path d="M400 140L410 170L375 182L355 162Z" fill="#E5A100"/>
+          <path d="M75 195L122 202L105 225L70 220Z" fill="#E5A100"/>
+          <path d="M425 195L430 220L395 225L378 202Z" fill="#E5A100"/>
+          
+          <!-- Sun Core Base -->
+          <path d="M150 200 C 150 120, 350 120, 350 200 Z" fill="#E5A100"/>
+
+          <!-- Interlocking Green Rings (OG Emblem) -->
+          <!-- Left Ring ('O') -->
+          <path d="M175 180 C 80 180, 50 310, 140 400 C 230 480, 320 370, 240 280 C 210 240, 210 180, 175 180 Z" fill="#1B4D2E" rule="evenodd"/>
+          
+          <!-- Right Ring ('G') -->
+          <path d="M325 180 C 290 180, 290 240, 260 280 C 180 370, 270 480, 360 400 C 450 310, 420 180, 325 180 Z" fill="#1B4D2E" rule="evenodd"/>
+
+          <!-- Left Ring Inner Grid Pattern -->
+          <circle cx="170" cy="330" r="70" fill="none" stroke="#FFFFFF" stroke-width="12"/>
+          <line x1="170" y1="260" x2="170" y2="400" stroke="#FFFFFF" stroke-width="10"/>
+          <line x1="100" y1="330" x2="240" y2="330" stroke="#FFFFFF" stroke-width="10"/>
+
+          <!-- Right Ring Inner Spiral Swirl -->
+          <path d="M 330 280 C 390 310, 370 380, 320 390 C 280 380, 290 330, 330 320" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+        </svg>
+
+        <div class="brand-text">
+          <span class="brand-title">Oronjo Green Energy</span>
+          <span class="brand-subtitle">Solution</span>
         </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#official">Payment Details</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <span class="hero-tag">Clean, Dependable & Sustainable Energy</span>
+      <h1>Professional Power Solutions for Homes & Businesses</h1>
+      <p>Oronjo Green Energy Solution provides high-efficiency solar installations, inverter system configurations, lithium battery backup, and energy audits tailored to your exact power requirements.</p>
+      
+      <div class="hero-cta">
+        <a href="https://wa.me/254713604062" target="_blank" class="btn btn-primary">WhatsApp Inquiry</a>
+        <a href="tel:0713604062" class="btn btn-secondary">Direct Call: 0713604062</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="section-title">
+      <h2>Our Core Services</h2>
+      <p>Comprehensive green energy engineering customized to meet your electrical load demands.</p>
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-                    <i class="fas fa-solar-panel text-xl text-amber-400"></i>
-                </div>
-                <div>
-                    <span class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 block leading-tight">ORONJO</span>
-                    <span class="text-xs font-semibold text-emerald-600 tracking-wider uppercase block">Green Energy Solution</span>
-                </div>
-            </a>
+    <div class="services-grid">
+      <!-- Service Item 1 -->
+      <div class="service-card">
+        <div>
+          <h3>Solar Panel Installation & Maintenance</h3>
+          <p>Professional rooftop and ground-mount solar power systems using high-efficiency monocrystalline panels designed for long-term optimal energy yields.</p>
+        </div>
+        <ul class="service-features">
+          <li>Residential & Commercial Rooftops</li>
+          <li>Grid-Tied & Off-Grid Configuration</li>
+          <li>System Health Inspections</li>
+        </ul>
+      </div>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="#home" class="hover:text-emerald-600 transition-colors">Home</a>
-                <a href="#services" class="hover:text-emerald-600 transition-colors">Services</a>
-                <a href="#calculator" class="hover:text-emerald-600 transition-colors">Solar Calculator</a>
-                <a href="#packages" class="hover:text-emerald-600 transition-colors">Packages</a>
-                <a href="#about" class="hover:text-emerald-600 transition-colors">About Us</a>
-            </nav>
+      <!-- Service Item 2 -->
+      <div class="service-card">
+        <div>
+          <h3>Inverter & Lithium Battery Backup</h3>
+          <p>Advanced hybrid inverter integration paired with safe LiFePO4 (Lithium Iron Phosphate) battery storage for seamless power backup during grid outages.</p>
+        </div>
+        <ul class="service-features">
+          <li>Pure Sine Wave Inverters</li>
+          <li>High-Cycle Lithium Storage</li>
+          <li>Uninterrupted Power Transfer</li>
+        </ul>
+      </div>
 
-            <!-- CTA Header Button -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20would%20like%20to%20inquire%20about%20your%20solar%20systems." 
-                   target="_blank" 
-                   class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Chat on WhatsApp</span>
-                </a>
-            </div>
+      <!-- Service Item 3 -->
+      <div class="service-card">
+        <div>
+          <h3>Site Energy Audits & System Design</h3>
+          <p>Comprehensive electrical load assessments and engineering site surveys to calculate accurate energy consumption profiles before system deployment.</p>
+        </div>
+        <ul class="service-features">
+          <li>Detailed Load Profiles</li>
+          <li>Capacity Sizing & Planning</li>
+          <li>Energy Efficiency Advice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none p-2">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+  <!-- Official Payment Info Card -->
+  <section id="official" class="official-info">
+    <div class="info-box">
+      <h3>Official Payment Details</h3>
+      <p>For verified client payments and official account billing, please use our registered M-Pesa channels below:</p>
+      
+      <div class="payment-details-flex">
+        <div class="payment-item">
+          <div class="payment-label">M-Pesa Paybill</div>
+          <div class="payment-val">303030</div>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 shadow-lg">
-            <a href="#home" class="block text-slate-700 font-medium py-1 hover:text-emerald-600">Home</a>
-            <a href="#services" class="block text-slate-700 font-medium py-1 hover:text-emerald-600">Services</a>
-            <a href="#calculator" class="block text-slate-700 font-medium py-1 hover:text-emerald-600">Solar Calculator</a>
-            <a href="#packages" class="block text-slate-700 font-medium py-1 hover:text-emerald-600">Packages</a>
-            <a href="#about" class="block text-slate-700 font-medium py-1 hover:text-emerald-600">About Us</a>
-            <div class="pt-2">
-                <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20would%20like%20to%20inquire%20about%20your%20solar%20systems." 
-                   target="_blank" 
-                   class="w-full bg-emerald-600 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 shadow">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Chat on WhatsApp</span>
-                </a>
-            </div>
+        <div class="payment-item">
+          <div class="payment-label">Account Number</div>
+          <div class="payment-val">RSKC#</div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-b from-slate-900 via-slate-850 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
-                        <i class="fas fa-bolt text-amber-400"></i> Powering Homes & Businesses Sustainably
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                        Reliable & Clean <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400">Solar Energy Solutions</span>
-                    </h1>
-                    <p class="text-slate-300 text-lg sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0">
-                        Cut your monthly electricity bills to zero. We engineer custom Tier-1 solar photovoltaic systems, high-efficiency lithium battery storage, and solar water pumping solutions.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#calculator" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
-                            <i class="fas fa-calculator"></i>
-                            <span>Calculate Your System</span>
-                        </a>
-                        <a href="#packages" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
-                            <i class="fas fa-box-open"></i>
-                            <span>View Packages</span>
-                        </a>
-                    </div>
-                    <!-- Trust Badges -->
-                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800 text-left">
-                        <div>
-                            <div class="text-2xl font-bold text-emerald-400">Tier-1</div>
-                            <div class="text-xs text-slate-400">Certified Hardware</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-emerald-400">25 Years</div>
-                            <div class="text-xs text-slate-400">Panel Performance</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-emerald-400">100%</div>
-                            <div class="text-xs text-slate-400">Reliable Backup</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Graphic Card -->
-                <div class="lg:col-span-5">
-                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 p-8 rounded-3xl shadow-2xl relative">
-                        <div class="absolute -top-4 -right-4 bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-full shadow">
-                            <i class="fas fa-star mr-1"></i> Best Quality
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Request Instant Solar Quote</h3>
-                        <form id="hero-quote-form" onsubmit="handleQuickQuote(event)" class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
-                                <input type="text" id="hq-name" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm" placeholder="e.g. John Kamau">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
-                                <input type="tel" id="hq-phone" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm" placeholder="0713604062">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Property Type</label>
-                                <select id="hq-type" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 text-sm">
-                                    <option value="Residential Home">Residential Home</option>
-                                    <option value="Commercial / Business">Commercial / Business</option>
-                                    <option value="Agricultural / Water Pump">Agricultural / Water Pump</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
-                                <i class="fab fa-whatsapp text-lg"></i>
-                                <span>Get Quote via WhatsApp</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="payment-item">
+          <div class="payment-label">Contact Phone</div>
+          <div class="payment-val">0713604062</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">Our Core Offerings</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Complete Solar Solutions Tailored for You</h2>
-                <p class="text-slate-600 text-base sm:text-lg">From site evaluation to professional installation and ongoing support, we deliver end-to-end solar engineering.</p>
-            </div>
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+      <p>Contact our engineering team directly to discuss your solar power requirements.</p>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 bg-emerald-100 group-hover:bg-emerald-600 text-emerald-600 group-hover:text-white rounded-xl flex items-center justify-center text-2xl transition-colors mb-6">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Residential Solar Systems</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Reliable hybrid and backup solar setups designed to keep your lights, fridge, entertainment, and Wi-Fi running 24/7 without grid interruptions.
-                    </p>
-                    <ul class="space-y-2 text-sm text-slate-700 font-medium">
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Tier-1 Monocrystalline Panels</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Lithium LiFePO4 Battery Storage</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Pure Sine Wave Inverters</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 bg-amber-100 group-hover:bg-amber-500 text-amber-600 group-hover:text-slate-950 rounded-xl flex items-center justify-center text-2xl transition-colors mb-6">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Commercial & Enterprise</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Slash business overhead expenses and power commercial operations, offices, schools, and retail outlets efficiently with high-capacity solar setups.
-                    </p>
-                    <ul class="space-y-2 text-sm text-slate-700 font-medium">
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Reduced Operational Overheads</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Three-Phase Inverter Integration</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Scalable Capacity Expansion</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 bg-blue-100 group-hover:bg-blue-600 text-blue-600 group-hover:text-white rounded-xl flex items-center justify-center text-2xl transition-colors mb-6">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Solar Water Pumping</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Cost-effective, fuel-free solar water pumping systems for domestic use, livestock watering, and agricultural irrigation.
-                    </p>
-                    <ul class="space-y-2 text-sm text-slate-700 font-medium">
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Submersible & Surface Pumps</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Automatic MPPT Controllers</li>
-                        <li><i class="fas fa-check text-emerald-600 mr-2"></i> Zero Fuel & Maintenance Costs</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="contact-container">
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Your Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
         </div>
-    </section>
 
-    <!-- Interactive Solar Calculator Section -->
-    <section id="calculator" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-full">Smart Tool</span>
-                <h2 class="text-3xl sm:text-4xl font-bold">Interactive Solar System Estimator</h2>
-                <p class="text-slate-300 text-base sm:text-lg">Select the appliances you want to power to instantly estimate your recommended inverter size, battery capacity, and solar panel array.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Appliance Selector -->
-                <div class="lg:col-span-7 bg-slate-800 border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-xl font-bold mb-6 text-emerald-400 flex items-center gap-2">
-                        <i class="fas fa-plug"></i> Select Your Household / Office Loads
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- Item 1 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="150" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Lighting & Phone Charging</div>
-                                    <div class="text-xs text-slate-400">LED Bulbs, Phones, Wi-Fi router</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded">~150W</span>
-                        </label>
-
-                        <!-- Item 2 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="200" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Refrigerator / Fridge</div>
-                                    <div class="text-xs text-slate-400">Standard Double-Door</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded">~200W</span>
-                        </label>
-
-                        <!-- Item 3 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="100" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Television & Decoder</div>
-                                    <div class="text-xs text-slate-400">LED TV up to 55"</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded">~100W</span>
-                        </label>
-
-                        <!-- Item 4 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="1500" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Water Pump</div>
-                                    <div class="text-xs text-slate-400">0.5 HP - 1 HP Borehole / Booster</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-amber-400 bg-amber-950 px-2.5 py-1 rounded">~1,500W</span>
-                        </label>
-
-                        <!-- Item 5 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="2000" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Electric Kettle / Iron Box</div>
-                                    <div class="text-xs text-slate-400">High-wattage heating appliance</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-amber-400 bg-amber-950 px-2.5 py-1 rounded">~2,000W</span>
-                        </label>
-
-                        <!-- Item 6 -->
-                        <label class="flex items-center justify-between p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl cursor-pointer hover:border-emerald-500 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="600" class="appliance-checkbox w-5 h-5 accent-emerald-500 rounded" onchange="calculateSolar()">
-                                <div>
-                                    <div class="font-semibold text-white">Washing Machine</div>
-                                    <div class="text-xs text-slate-400">Automatic Washer</div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-medium text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded">~600W</span>
-                        </label>
-                    </div>
-
-                    <div class="mt-6 pt-6 border-t border-slate-700 flex items-center justify-between text-sm text-slate-400">
-                        <span>Tip: Select all appliances you plan to use concurrently.</span>
-                        <button onclick="resetCalculator()" class="text-amber-400 hover:underline">Reset Selection</button>
-                    </div>
-                </div>
-
-                <!-- Calculation Results Panel -->
-                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-900/80 to-slate-800 border border-emerald-500/30 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
-                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i class="fas fa-chart-pie text-amber-400"></i> Recommended System Specs
-                    </h3>
-
-                    <div class="space-y-4">
-                        <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-xs text-slate-400 uppercase font-semibold">Inverter Capacity</div>
-                                <div id="res-inverter" class="text-2xl font-bold text-white">1.5 kVA / kW</div>
-                            </div>
-                            <i class="fas fa-bolt text-3xl text-amber-400"></i>
-                        </div>
-
-                        <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-xs text-slate-400 uppercase font-semibold">Battery Storage Bank</div>
-                                <div id="res-battery" class="text-2xl font-bold text-white">2.5 kWh LiFePO4</div>
-                            </div>
-                            <i class="fas fa-battery-full text-3xl text-emerald-400"></i>
-                        </div>
-
-                        <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl flex items-center justify-between">
-                            <div>
-                                <div class="text-xs text-slate-400 uppercase font-semibold">Solar Panel Array</div>
-                                <div id="res-panels" class="text-2xl font-bold text-white">2 x 550W Panels</div>
-                            </div>
-                            <i class="fas fa-solar-panel text-3xl text-amber-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <a id="whatsapp-calc-btn" href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20used%20your%20website%20calculator%20and%20need%20a%20system%20matching%201.5%20kVA%20inverter%20and%202.5%20kWh%20battery." 
-                           target="_blank" 
-                           class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-center">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                            <span>Request This Setup on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g. 0712345678" required>
         </div>
-    </section>
 
-    <!-- Popular Packages Section -->
-    <section id="packages" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-full">Turnkey Bundles</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Popular Solar Package Bundles</h2>
-                <p class="text-slate-600 text-base sm:text-lg">Professionally engineered system bundles complete with hardware, mounting structures, and expert professional installation.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Package 1 -->
-                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full inline-block mb-4">Starter Home</div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">3kVA Essential Backup</h3>
-                        <p class="text-slate-600 text-sm mb-6">Ideal for lighting, phone charging, TV, Wi-Fi router, and small fridge.</p>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8 border-t border-b border-slate-100 py-6">
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 3kVA Hybrid Inverter</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 2.56kWh Lithium Battery</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 3 x 550W Tier-1 Panels</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> Installation & Accessories</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20am%20interested%20in%20the%203kVA%20Essential%20Backup%20Package." 
-                       target="_blank" 
-                       class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                        <span>Enquire Package</span>
-                    </a>
-                </div>
-
-                <!-- Package 2 (Highlighted) -->
-                <div class="bg-slate-900 border-2 border-emerald-500 rounded-3xl p-8 shadow-xl relative flex flex-col justify-between text-white">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-bold text-xs uppercase px-4 py-1.5 rounded-full shadow">
-                        <i class="fas fa-fire mr-1"></i> Most Popular
-                    </div>
-                    <div>
-                        <div class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full inline-block mb-4">Standard Family</div>
-                        <h3 class="text-2xl font-bold mb-2">5.5kVA Full Home</h3>
-                        <p class="text-slate-300 text-sm mb-6">Runs all household appliances including fridge, TV, washing machine, and microwave.</p>
-                        <ul class="space-y-3 text-sm text-slate-200 mb-8 border-t border-b border-slate-800 py-6">
-                            <li><i class="fas fa-check text-emerald-400 mr-2"></i> 5.5kVA Pure Sine Inverter</li>
-                            <li><i class="fas fa-check text-emerald-400 mr-2"></i> 5.12kWh LiFePO4 Battery Bank</li>
-                            <li><i class="fas fa-check text-emerald-400 mr-2"></i> 6 x 550W Monocrystalline Panels</li>
-                            <li><i class="fas fa-check text-emerald-400 mr-2"></i> Complete Mounting & Protection</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20am%20interested%20in%20the%205.5kVA%20Full%20Home%20Package." 
-                       target="_blank" 
-                       class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 shadow">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                        <span>Enquire Package</span>
-                    </a>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full inline-block mb-4">Executive / Commercial</div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">10kVA Heavy Power</h3>
-                        <p class="text-slate-600 text-sm mb-6">Heavy-duty power for large homes, offices, schools, and business premises.</p>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8 border-t border-b border-slate-100 py-6">
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 10kVA Hybrid Inverter System</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 10.24kWh Dual Lithium Storage</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> 12 x 550W Tier-1 Panels</li>
-                            <li><i class="fas fa-check text-emerald-600 mr-2"></i> Full Professional Commissioning</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20am%20interested%20in%20the%2010kVA%20Heavy%20Power%20Package." 
-                       target="_blank" 
-                       class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                        <span>Enquire Package</span>
-                    </a>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="message">Service Required / Message</label>
+          <textarea id="message" rows="4" placeholder="Tell us about your power needs (e.g. Solar panel installation, battery storage...)" required></textarea>
         </div>
-    </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">About Oronjo Green Energy</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Engineering a Cleaner, Greener Future</h2>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        At Oronjo Green Energy Solution, we are passionate about transforming how homes and businesses access electricity. We believe reliable power should be clean, sustainable, and free from unpredictable grid failures and escalating utility tariffs.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6 pt-2">
-                        <div class="border-l-4 border-emerald-600 pl-4">
-                            <div class="text-2xl font-bold text-slate-900">100%</div>
-                            <div class="text-sm text-slate-600">Quality Assured Hardware</div>
-                        </div>
-                        <div class="border-l-4 border-amber-500 pl-4">
-                            <div class="text-2xl font-bold text-slate-900">24/7</div>
-                            <div class="text-sm text-slate-600">Technical Support & Service</div>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="https://wa.me/254713604062?text=Hello%20Oronjo%20Green%20Energy,%20I%20would%20like%20to%20speak%20with%20an%20expert." 
-                           target="_blank" 
-                           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow transition-all">
-                            <i class="fas fa-headset"></i>
-                            <span>Speak With an Expert</span>
-                        </a>
-                    </div>
-                </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry via WhatsApp</button>
+      </form>
+    </div>
+  </section>
 
-                <div class="lg:col-span-6">
-                    <div class="bg-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-2xl"></div>
-                        <h3 class="text-2xl font-bold mb-6 text-emerald-400">Why Choose Oronjo?</h3>
-                        <ul class="space-y-4 text-slate-300">
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check-circle text-emerald-400 text-lg mt-1"></i>
-                                <div>
-                                    <strong class="text-white block">Customized Load Sizing</strong>
-                                    <span class="text-sm text-slate-400">We analyze your exact power consumption before recommending equipment.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check-circle text-emerald-400 text-lg mt-1"></i>
-                                <div>
-                                    <strong class="text-white block">Certified Professional Installers</strong>
-                                    <span class="text-sm text-slate-400">Expert technicians ensure clean cabling, robust mounting, and safety compliance.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check-circle text-emerald-400 text-lg mt-1"></i>
-                                <div>
-                                    <strong class="text-white block">Comprehensive Warranties</strong>
-                                    <span class="text-sm text-slate-400">Long-standing manufacturer warranties on solar panels, inverters, and batteries.</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Oronjo Green Energy Solution. All rights reserved.</p>
+    <p style="margin-top: 4px; font-weight: 600;">Contact: 0713604062 | Paybill: 303030 (Account: RSKC#)</p>
+  </footer>
 
-    <!-- Contact & Consultation Section -->
-    <section id="contact" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full">Get In Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold">Ready to Switch to Clean Energy?</h2>
-                    <p class="text-slate-300 text-base leading-relaxed">
-                        Contact us today for a site visit, custom quotation, or technical consultation. Reach out directly via phone or WhatsApp for the fastest response.
-                    </p>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
 
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4 bg-slate-800 border border-slate-700 p-4 rounded-2xl">
-                            <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-medium">Phone / WhatsApp Line</div>
-                                <div class="text-lg font-bold text-white">+254 713 604 062</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 bg-slate-800 border border-slate-700 p-4 rounded-2xl">
-                            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-medium">Official Email</div>
-                                <div class="text-lg font-bold text-white">info@oronjogreenenergy.com</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 bg-slate-800 border border-slate-700 p-4 rounded-2xl">
-                            <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-xl">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-medium">Service Coverage</div>
-                                <div class="text-lg font-bold text-white">Kenya (Nationwide Installations)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form Card -->
-                <div class="lg:col-span-6 bg-slate-800 border border-slate-700 p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-6 text-white">Send Us a Message</h3>
-                    <form onsubmit="handleContactForm(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
-                            <input type="text" id="c-name" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm" placeholder="Enter your full name">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
-                            <input type="tel" id="c-phone" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm" placeholder="0713604062">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Inquiry / Project Details</label>
-                            <textarea id="c-msg" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm" placeholder="Tell us what you want to power..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                            <span>Send Message via WhatsApp</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
-                    <i class="fas fa-solar-panel text-amber-400"></i>
-                </div>
-                <div>
-                    <span class="text-white font-bold tracking-tight block">ORONJO GREEN ENERGY SOLUTION</span>
-                    <span class="text-xs text-slate-500">Clean, Reliable & Sustainable Power</span>
-                </div>
-            </div>
-            <div class="text-xs text-slate-500 text-center md:text-right">
-                &copy; 2026 Oronjo Green Energy Solution. All rights reserved. Designed for professional excellence.
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript for Calculator & Mobile Menu -->
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Solar Calculator Logic
-        function calculateSolar() {
-            const checkboxes = document.querySelectorAll('.appliance-checkbox:checked');
-            let totalWatts = 0;
-            checkboxes.forEach(cb => {
-                totalWatts += parseInt(cb.value);
-            });
-
-            let inverterSize = "1.5 kVA / kW";
-            let batterySize = "2.5 kWh LiFePO4";
-            let panelSize = "2 x 550W Panels";
-            let waText = "1.5 kVA inverter and 2.5 kWh battery";
-
-            if (totalWatts > 2500) {
-                inverterSize = "5.5 kVA / kW";
-                batterySize = "5.12 kWh LiFePO4";
-                panelSize = "6 x 550W Panels";
-                waText = "5.5 kVA inverter and 5.12 kWh battery";
-            } else if (totalWatts > 1000) {
-                inverterSize = "3.0 kVA / kW";
-                batterySize = "2.56 kWh LiFePO4";
-                panelSize = "4 x 550W Panels";
-                waText = "3 kVA inverter and 2.56 kWh battery";
-            } else if (totalWatts > 400) {
-                inverterSize = "2.0 kVA / kW";
-                batterySize = "2.5 kWh LiFePO4";
-                panelSize = "3 x 550W Panels";
-                waText = "2 kVA inverter and 2.5 kWh battery";
-            }
-
-            document.getElementById('res-inverter').innerText = inverterSize;
-            document.getElementById('res-battery').innerText = batterySize;
-            document.getElementById('res-panels').innerText = panelSize;
-
-            const waBtn = document.getElementById('whatsapp-calc-btn');
-            waBtn.href = `https://wa.me/254713604062?text=` + encodeURIComponent(`Hello Oronjo Green Energy, I used your website calculator for my loads (~${totalWatts}W) and need a system quote matching: ${inverterSize} with ${batterySize} and ${panelSize}.`);
-        }
-
-        function resetCalculator() {
-            document.querySelectorAll('.appliance-checkbox').forEach(cb => cb.checked = false);
-            calculateSolar();
-        }
-
-        // Quick Quote Form Handler
-        function handleQuickQuote(e) {
-            e.preventDefault();
-            const name = document.getElementById('hq-name').value;
-            const phone = document.getElementById('hq-phone').value;
-            const type = document.getElementById('hq-type').value;
-
-            const text = `Hello Oronjo Green Energy, my name is ${name} (${phone}). I am requesting a solar quote for my ${type}.`;
-            window.open(`https://wa.me/254713604062?text=` + encodeURIComponent(text), '_blank');
-        }
-
-        // Contact Form Handler
-        function handleContactForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('c-name').value;
-            const phone = document.getElementById('c-phone').value;
-            const msg = document.getElementById('c-msg').value;
-
-            const text = `Hello Oronjo Green Energy, my name is ${name} (${phone}). Inquiry: ${msg}`;
-            window.open(`https://wa.me/254713604062?text=` + encodeURIComponent(text), '_blank');
-        }
-    </script>
+      const whatsappMessage = `Hello Oronjo Green Energy Solution,%0A%0AMy Name: ${encodeURIComponent(name)}%0AMy Phone: ${encodeURIComponent(phone)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+      
+      // Redirect directly to official WhatsApp number
+      window.open(`https://wa.me/254713604062?text=${whatsappMessage}`, '_blank');
+    }
+  </script>
 </body>
 </html>
 
